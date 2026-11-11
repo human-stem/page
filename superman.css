@@ -1,0 +1,462 @@
+/* =====================================================================
+   HUMAN STEM — superman.css
+   Plano superior: el cielo. La constelación del puño es el índice de la
+   página; cada estrella lleva a una sección u objetivo del proyecto.
+
+   1. Firmamento (retícula de la página)   4. Simulador
+   2. Constelación                          5. Facetas, glosario y cierre
+   3. Secciones                             6. Impresión
+   ===================================================================== */
+
+:root {
+  --flex: #ffab7a;  /* flexores: cierran */
+  --ext: #7fdcec;   /* extensores: abren */
+  --oro: #ffe7ad;   /* estrellas encendidas */
+  --trazo: #d7e6df;
+  --trazo-suave: #8fb0b8;
+  --placa: #0c1922;
+}
+
+[data-plano="cielo"] .capa-cielo {
+  background:
+    radial-gradient(ellipse 90% 60% at 40% 12%, #173543 0%, transparent 70%),
+    linear-gradient(160deg, var(--noche), #0d1a23 65%, #10222b);
+}
+[data-plano="cielo"] .capa-cielo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/escena/estrellas.svg") 0 0 / 720px 520px;
+  opacity: .5;
+  pointer-events: none;
+}
+
+/* ---------- 1. Firmamento ---------- */
+.firmamento {
+  width: min(100%, 1280px);
+  margin-inline: auto;
+  padding: 0 var(--margen) 8px;
+}
+@media (min-width: 960px) {
+  .firmamento {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: clamp(32px, 4vw, 64px);
+    align-items: start;
+  }
+  .ruta { grid-column: 1 / -1; }
+  .carta { grid-column: 1; grid-row: 2 / span 8; }
+  .estrella { grid-column: 2; }
+}
+
+/* ---------- 2. Constelación ----------
+   El dibujo usa un viewBox de 760 × 490. Cada enlace de la lista lleva las
+   coordenadas de su estrella (--x, --y) en esas unidades y su punto se
+   coloca sobre el dibujo: un solo enlace sirve de estrella y de rótulo.
+   --ar es la proporción visible; en móvil se recorta a los lados. */
+.carta {
+  --ar: 1.24;
+  --ancho-visible: calc(490 * var(--ar));
+  position: relative;
+  container-type: inline-size;
+  margin-block: 8px 28px;
+  border: 1px solid var(--filete);
+  border-radius: var(--radio-panel);
+  background: linear-gradient(145deg, #101e29, #0c1920 55%, #0d1b26);
+}
+.carta__lienzo { aspect-ratio: var(--ar); border-bottom: 1px solid var(--filete); }
+.carta__lienzo svg { display: block; width: 100%; height: 100%; }
+.carta__reticula { fill: none; stroke: #8bb5bf; stroke-width: .8; opacity: .3; }
+.carta__campo { fill: rgb(90 179 195 / .08); transition: fill .7s; }
+.carta[data-completa="true"] .carta__campo { fill: rgb(90 179 195 / .17); }
+.carta__base, .carta__luz { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.carta__base { stroke: #78a7b3; stroke-opacity: .6; stroke-width: 1.4; }
+.carta__luz { stroke: #ccefe4; stroke-width: 2;  }
+.carta__nudos circle { fill: #e1f8e9; }
+/* Sin JavaScript todo queda encendido; con él, cada tramo se enciende al
+   llegar a su sección. */
+.js .carta__luz use {
+  opacity: 0;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: opacity .26s, stroke-dashoffset .8s cubic-bezier(.21, .65, .41, 1);
+}
+.js .carta__luz .encendida { opacity: 1; stroke-dashoffset: 0; }
+.js .carta__nudos circle { fill: #94b6ba; opacity: .64; transition: fill .35s, opacity .35s; }
+.js .carta__nudos .encendida { fill: #e1f8e9; opacity: 1; }
+
+.carta__titulo { padding: 12px 14px 0; color: var(--texto-suave); }
+.carta__estrellas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 12px;
+  margin: 0;
+  padding: 4px 14px 8px;
+  list-style: none;
+}
+.carta__estrellas a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  color: var(--texto);
+  font: 400 1rem/1.2 var(--sans);
+  text-decoration: none;
+}
+.carta__estrellas a:visited { color: var(--texto); }
+.carta__num { font: 400 .75rem/1 var(--mono); color: var(--cielo); }
+.carta__estrellas a:hover,
+.carta__estrellas a[aria-current] { color: var(--oro); }
+.carta__estrellas a[aria-current] { text-decoration: underline; text-underline-offset: .3em; }
+.carta__avance {
+  margin: 0;
+  padding: 10px 14px 12px;
+  border-top: 1px solid var(--filete);
+  color: var(--texto-suave);
+  font: 400 .75rem/1.4 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* El astro: área táctil de 44 px colocada sobre el dibujo. */
+.astro {
+  position: absolute;
+  left: calc((var(--x) - (760 - var(--ancho-visible)) / 2) / var(--ancho-visible) * 100cqi);
+  top: calc(var(--y) / 490 * 100cqi / var(--ar));
+  width: 44px;
+  height: 44px;
+  translate: -50% -50%;
+  border-radius: 50%;
+}
+.astro::before, .astro::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transition: background-color .24s, border-color .24s, box-shadow .24s, scale .24s;
+}
+.astro::before {
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--oro);
+  border-radius: 50%;
+  background: rgb(18 36 48 / .88);
+  box-shadow: 0 0 12px rgb(245 206 123 / .32);
+}
+.astro::after {
+  width: 11px;
+  height: 11px;
+  background: var(--oro);
+  clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
+}
+/* Número de la estrella junto al astro; coincide con el de la lista. */
+.astro b {
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 15px);
+  translate: 0 -50%;
+  padding: 2px 3px;
+  background: rgb(18 36 44 / .85);
+  color: var(--oro);
+  font: 400 .75rem/1 var(--mono);
+}
+.astro--izq b { left: auto; right: calc(50% + 15px); }
+.js a[data-vista="false"] .astro b { color: #b8d5d6; }
+.js a[data-vista="false"] .astro::before { border-color: #90c4cc; box-shadow: none; }
+.js a[data-vista="false"] .astro::after { background: #b3d2d6; }
+a:hover .astro::before,
+a[aria-current] .astro::before {
+  border-color: #fff3ce;
+  box-shadow: 0 0 0 3px rgb(249 224 173 / .28), 0 0 21px rgb(240 211 159 / .56);
+  scale: 1.1;
+}
+a:hover .astro::after,
+a[aria-current] .astro::after { background: #fff1c8; scale: 1.25; }
+
+/* ---------- 3. Secciones ---------- */
+.estrella {
+  padding-block: 28px 44px;
+  border-top: 1px solid var(--filete);
+  scroll-margin-top: calc(var(--alto-cabecera) + 8px);
+}
+.estrella--primera { padding-block: 6px 14px; border-top: 0; }
+.estrella--ultima { padding-bottom: 56px; }
+.estrella > * { max-width: 40rem; }
+.estrella__marca { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; color: var(--oro); }
+.estrella__marca::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: currentColor;
+  clip-path: polygon(50% 0, 63% 37%, 100% 50%, 63% 63%, 50% 100%, 37% 63%, 0 50%, 37% 37%);
+}
+.estrella h1 { font-size: clamp(2.75rem, 1.6rem + 6vw, 5.25rem); letter-spacing: -.055em; line-height: .92; }
+.estrella h2 { font-size: clamp(2.125rem, 1.5rem + 3vw, 3.25rem); letter-spacing: -.04em; }
+.estrella h3 { margin: 30px 0 10px; font-size: 1.375rem; letter-spacing: -.01em; }
+.estrella__entrada {
+  margin: 16px 0 20px;
+  color: var(--texto-suave);
+  font-size: clamp(1.125rem, 1rem + .5vw, 1.3125rem);
+  line-height: 1.5;
+}
+
+/* ---------- 4. Simulador ---------- */
+.simulador {
+  border-radius: var(--radio-panel); display: grid; gap: 10px; max-width: 30rem; margin-top: 4px; }
+.sim { margin: 0; border: 1px solid var(--filete); background: #0d1a23; }
+.sim__lienzo { display: block; width: 100%; height: auto; }
+
+.sim__lienzo [data-capa] { transition: opacity .25s; }
+.sim__lienzo[data-foco] [data-capa] { opacity: .16; }
+.sim__lienzo[data-foco="1"] [data-capa="1"],
+.sim__lienzo[data-foco="2"] [data-capa="2"],
+.sim__lienzo[data-foco="3"] [data-capa="3"],
+.sim__lienzo[data-foco="4"] [data-capa="4"] { opacity: 1; }
+
+.piel { fill: #1c3646; stroke: #b9d7d6; stroke-width: 1.3; }
+.fibra { fill: none; stroke-width: 2; stroke-linecap: round; opacity: .8; }
+.fibra--flex, .hilo--flex, .traza--flex, .aro--flex { stroke: var(--flex); }
+.fibra--ext, .hilo--ext, .traza--ext, .aro--ext { stroke: var(--ext); }
+.encaje { fill: rgb(215 230 223 / .07); stroke: var(--trazo); stroke-width: 1.3; stroke-linejoin: round; }
+.aro { fill: none; stroke-width: 1.5; }
+.polo--flex, .pesa--flex { fill: var(--flex); }
+.polo--ext, .pesa--ext { fill: var(--ext); }
+.pantalla { fill: var(--placa); stroke: var(--filete); stroke-width: 1; }
+.traza { fill: none; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+.hilo { fill: none; stroke-width: 1.4; stroke-dasharray: 4 4; opacity: .45; }
+.hilo--orden { stroke: var(--oro); }
+.fiel, .astil { fill: none; stroke: var(--trazo); stroke-width: 1.6; stroke-linecap: round; }
+.astil { stroke-width: 2.4; }
+.eje { fill: var(--trazo); }
+.decision { fill: var(--trazo); opacity: .14; }
+.guia { fill: none; stroke: var(--trazo-suave); stroke-width: 1; stroke-dasharray: 2 4; opacity: .8; }
+.chip { fill: var(--placa); stroke: var(--oro); stroke-width: 1.3; }
+.muneca { fill: #22404f; stroke: var(--trazo); stroke-width: 1.2; }
+.palma { fill: #17303e; stroke: var(--trazo); stroke-width: 1.4; stroke-linejoin: round; }
+.servo circle { fill: var(--placa); stroke: var(--oro); stroke-width: 1.3; }
+.servo path { stroke: var(--oro); stroke-width: 1.6; stroke-linecap: round; }
+.blanco { fill: var(--oro); opacity: 0; }
+/* Los dedos del fondo van más apagados: el índice y el pulgar, al frente. */
+.dedo rect { stroke-width: 1.3; }
+.dedo--menique rect { fill: #122733; stroke: #6f929c; }
+.dedo--anular rect { fill: #152d3a; stroke: #87a8b0; }
+.dedo--medio rect { fill: #183442; stroke: #a5c2c5; }
+.dedo--indice rect { fill: #214455; stroke: var(--texto); }
+.dedo--pulgar rect { fill: #264b5c; stroke: var(--texto); }
+.nudo { fill: var(--oro); }
+.dedo--menique .nudo, .dedo--anular .nudo, .dedo--medio .nudo { opacity: .55; }
+.sim__rotulo { font: 400 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.sim__rotulo--flex { fill: var(--flex); }
+.sim__rotulo--ext { fill: var(--ext); }
+
+.tablero { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; }
+.agarres { display: flex; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.agarres li {
+  padding: 6px 10px;
+  border: 1px solid var(--filete);
+  color: var(--texto-mudo);
+  font: 400 .8125rem/1.2 var(--sans);
+}
+.agarres li[aria-current] { border-color: var(--oro); background: var(--oro); color: var(--noche); font-weight: 600; }
+.tablero__estado { color: var(--texto-suave); font: 400 .875rem/1.3 var(--sans); }
+.tablero__estado.activo { color: var(--oro); }
+
+/* Sin JavaScript no hay simulación: se ocultan los controles y queda el
+   esquema con su explicación. */
+.consola, .tablero { display: none; }
+.js .tablero { display: flex; }
+.js .consola { display: grid; gap: 10px; }
+.consola p { margin: 0; max-width: none; }
+.consola__ayuda { color: var(--texto); font: 400 .9375rem/1.4 var(--sans); }
+.consola__umbral { color: var(--texto-mudo); font: 400 .8125rem/1.4 var(--sans); }
+.consola__canales { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.canal {
+  --tono: var(--flex);
+  position: relative;
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.canal--ext { --tono: var(--ext); }
+/* El pulsador se mantiene presionado: no debe desplazar la página ni
+   seleccionar texto mientras tanto. */
+.pulsador {
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  min-height: 76px;
+  padding: 10px 12px 12px;
+  border: 1.5px solid var(--tono);
+  border-radius: var(--radio-control-alto);
+  background: color-mix(in srgb, var(--tono) 12%, var(--placa));
+  color: var(--texto);
+  text-align: left;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color .12s, transform .12s;
+}
+.pulsador[aria-pressed="true"] { background: var(--tono); color: var(--noche); transform: translateY(2px); }
+.pulsador__nombre { font: 600 1.0625rem/1.15 var(--sans); }
+.pulsador__accion { display: flex; align-items: center; gap: 8px; font: 400 .875rem/1.2 var(--sans); }
+.pulsador kbd {
+  display: none;
+  min-width: 22px;
+  padding: 2px 5px;
+  border: 1px solid currentColor;
+  border-radius: var(--radio-chico);
+  font: 400 .75rem/1.2 var(--mono);
+  text-align: center;
+}
+@media (hover: hover) and (pointer: fine) {
+  .pulsador kbd { display: inline-block; }
+}
+.canal__lectura {
+  position: absolute;
+  top: 46px;
+  right: 12px;
+  color: var(--tono);
+  font: 400 .75rem/1.3 var(--mono);
+  pointer-events: none;
+}
+.pulsador[aria-pressed="true"] ~ .canal__lectura { color: var(--noche); }
+.nivel {
+  position: relative;
+  height: 8px;
+  border: 1px solid var(--filete);
+  background: var(--placa);
+}
+.nivel::after { /* umbral */
+  content: "";
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: 30%;
+  width: 2px;
+  background: var(--texto);
+}
+.nivel__barra { display: block; width: 0; height: 100%; background: var(--tono); }
+.tono { display: grid; gap: 2px; color: var(--texto-suave); font: 400 .8125rem/1.3 var(--sans); }
+.tono input { width: 100%; height: 44px; margin: 0; accent-color: var(--tono); }
+.consola__ambos { --acento: var(--oro); min-height: 48px; }
+
+
+/* ---------- 5. Facetas, glosario y cierre ---------- */
+.facetas { display: grid; gap: 8px; }
+.facetas details { border-radius: var(--radio-panel); border: 1px solid var(--filete); background: rgb(13 26 35 / .7); transition: border-color .2s; }
+.facetas details[open] { border-color: var(--cielo); }
+.facetas details.activa { border-color: var(--oro); }
+.facetas summary {
+  border-radius: var(--radio-control);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 14px;
+  font: 400 1rem/1.2 var(--sans);
+  cursor: pointer;
+  list-style: none;
+}
+.facetas summary::-webkit-details-marker { display: none; }
+.facetas summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-left: auto;
+  border: solid currentColor;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+  transition: transform .2s;
+}
+.facetas details[open] > summary::after { transform: rotate(-135deg); }
+.facetas__n {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--cielo);
+  border-radius: 50%;
+  color: var(--cielo);
+  font: 400 .75rem/1 var(--mono);
+}
+.facetas details.activa .facetas__n { border-color: var(--oro); background: var(--oro); color: var(--noche); }
+.facetas p { margin: 0; padding: 0 14px 14px 50px; color: var(--texto-suave); font-size: 1rem; line-height: 1.5; }
+
+.glosario { display: grid; gap: 14px; margin: 18px 0 0; }
+.glosario dt { font: 600 1.0625rem/1.3 var(--serif); color: var(--texto); }
+.glosario dd { margin: 2px 0 0; color: var(--texto-suave); }
+
+/* El camino de vuelta al horizonte: el cielo se aclara al bajar. */
+.descenso {
+  border-radius: var(--radio-control-alto);
+  --tono: var(--horizonte);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  padding: 8px 18px 8px 8px;
+  border: 1px solid color-mix(in srgb, var(--tono) 55%, transparent);
+  background: rgb(13 24 33 / .82);
+  color: var(--texto);
+  text-decoration: none;
+  transition: transform .2s, border-color .2s;
+}
+.descenso:visited { color: var(--texto); }
+.descenso:hover { border-color: var(--tono); transform: translateY(3px); }
+.descenso svg {
+  border-radius: var(--radio-control);
+  flex: none;
+  width: 42px;
+  height: 42px;
+  padding: 11px;
+  background: color-mix(in srgb, var(--tono) 13%, transparent);
+  fill: none;
+  stroke: var(--tono);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.descenso span { display: grid; gap: 1px; }
+.descenso .rotulo { color: var(--tono); }
+.descenso strong { font: 400 1.25rem/1.2 var(--serif); }
+.pie { border-top-color: rgb(243 209 160 / .5); box-shadow: 0 -60px 80px -40px rgb(198 141 91 / .28); }
+
+@media (min-width: 960px) {
+  .carta { --ar: 1.32; position: sticky; top: calc(var(--alto-cabecera) + 12px); margin-top: 6px; }
+  .estrella--primera { padding-block: 0 44px; }
+  .facetas { grid-template-columns: 1fr 1fr; align-items: start; max-width: 44rem; }
+  .estrella > .facetas { max-width: 44rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .carta__luz use { transition: none; }
+}
+
+/* ---------- 6. Impresión ---------- */
+@media print {
+  body::before, .carta__lienzo, .astro, .carta__avance, .consola, .tablero, .descenso svg { display: none !important; }
+  body { background: #fff; }
+  .firmamento { display: block; }
+  .carta { position: static; border: 0; background: none; }
+  .carta__estrellas a, .carta__num, .estrella__marca, .glosario dt, .glosario dd, .facetas summary, .facetas p { color: #000; }
+  .sim { border-color: #000; background: #0f1c26; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .sim__lienzo { max-width: 110mm; }
+  .facetas details { border-color: #000; background: none; }
+  .facetas details > p { display: block; }
+  .descenso { border: 0; background: none; padding: 0; }
+  .descenso strong, .descenso .rotulo { color: #000; }
+}
+
+@media screen {
+  .estrella:not(.estrella--primera) {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto 410px;
+  }
+}
