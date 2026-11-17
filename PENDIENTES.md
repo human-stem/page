@@ -16,11 +16,17 @@ Las líneas corresponden a esta rama. Responsables indicados por función; el eq
 | `index.html` | 207 | descripción de la foto | Coordinación de HUMAN STEM |
 | `index.html` | 211 | descripción de la foto | Coordinación de HUMAN STEM |
 | `index.html` | 215 | descripción de la foto | Coordinación de HUMAN STEM |
-| `miltli.html` | 105 | estado actual de Programa Miltli | Equipo del Programa Miltli |
-| `miltli.html` | 106 | fechas de las actividades documentadas de Programa Miltli | Equipo del Programa Miltli |
-| `miltli.html` | 110 | descripción de la foto | Equipo del Programa Miltli |
-| `miltli.html` | 114 | descripción de la foto | Equipo del Programa Miltli |
-| `miltli.html` | 118 | descripción de la foto | Equipo del Programa Miltli |
+| `miltli.html` | 107 | descripción del Programa Miltli validada por su equipo | Equipo del Programa Miltli |
+| `miltli.html` | 109 | lugares donde se realiza el Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 111 | fase actual del Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 113 | actividades y compromiso de participación en el Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 115 | significado y origen verificados del nombre Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 117 | nombres, roles y biografías del equipo del Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 123 | estado actual de Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 124 | fechas de las actividades documentadas de Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 128 | descripción de la foto | Equipo del Programa Miltli |
+| `miltli.html` | 132 | descripción de la foto | Equipo del Programa Miltli |
+| `miltli.html` | 136 | descripción de la foto | Equipo del Programa Miltli |
 | `superman.html` | 61 | estándar y evidencia que respalden la aspiración de grado médico del Proyecto Superman | Dirección del Proyecto Superman |
 | `superman.html` | 349 | resumen textual verificado de la entrevista de Proyecto Superman | Dirección del Proyecto Superman |
 | `superman.html` | 382 | criterios para solicitar una prótesis de Proyecto Superman | Dirección del Proyecto Superman |
