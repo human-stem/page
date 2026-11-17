@@ -5,7 +5,27 @@ Las líneas corresponden a esta rama. Responsables indicados por función; el eq
 | Archivo | Línea | Dato faltante | Quién debe suministrarlo |
 |---|---:|---|---|
 | `en/index.html` | 123 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
-| `index.html` | 137 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
+| `index.html` | 139 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
+| `index.html` | 183 | estado actual de Proyecto Superman | Dirección del Proyecto Superman |
+| `index.html` | 184 | fechas de las actividades documentadas de Proyecto Superman | Dirección del Proyecto Superman |
+| `index.html` | 188 | descripción de la foto | Coordinación de HUMAN STEM |
+| `index.html` | 192 | descripción de la foto | Coordinación de HUMAN STEM |
+| `index.html` | 196 | descripción de la foto | Coordinación de HUMAN STEM |
+| `index.html` | 202 | estado actual de Programa Miltli | Equipo del Programa Miltli |
+| `index.html` | 203 | fechas de las actividades documentadas de Programa Miltli | Equipo del Programa Miltli |
+| `index.html` | 207 | descripción de la foto | Coordinación de HUMAN STEM |
+| `index.html` | 211 | descripción de la foto | Coordinación de HUMAN STEM |
+| `index.html` | 215 | descripción de la foto | Coordinación de HUMAN STEM |
+| `miltli.html` | 105 | estado actual de Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 106 | fechas de las actividades documentadas de Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 110 | descripción de la foto | Equipo del Programa Miltli |
+| `miltli.html` | 114 | descripción de la foto | Equipo del Programa Miltli |
+| `miltli.html` | 118 | descripción de la foto | Equipo del Programa Miltli |
+| `superman.html` | 376 | estado actual de Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 377 | fechas de las actividades documentadas de Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 381 | descripción de la foto | Dirección del Proyecto Superman |
+| `superman.html` | 385 | descripción de la foto | Dirección del Proyecto Superman |
+| `superman.html` | 389 | descripción de la foto | Dirección del Proyecto Superman |
 
 ## Fotografías
 
