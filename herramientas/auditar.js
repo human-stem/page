@@ -65,7 +65,7 @@ try { axe = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8'); } c
     titulos[datos.titulo] = pagina;
     if (datos.titulo.length > 70) anota(pagina, `título de ${datos.titulo.length} caracteres`);
     if (!datos.descripcion) anota(pagina, 'sin meta description');
-    if (!datos.claves) anota(pagina, 'sin meta keywords');
+    if (datos.claves) anota(pagina, 'meta keywords obsoleto');
     if (!datos.lang) anota(pagina, 'sin lang');
     if (datos.h1 !== 1) anota(pagina, `${datos.h1} encabezados h1`);
     if (datos.principales !== 1) anota(pagina, `${datos.principales} elementos <main>`);
