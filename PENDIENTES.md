@@ -4,18 +4,22 @@ Las líneas corresponden a esta rama. Responsables indicados por función; el eq
 
 | Archivo | Línea | Dato faltante | Quién debe suministrarlo |
 |---|---:|---|---|
-| `en/index.html` | 123 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
-| `index.html` | 139 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
-| `index.html` | 183 | estado actual de Proyecto Superman | Dirección del Proyecto Superman |
-| `index.html` | 184 | fechas de las actividades documentadas de Proyecto Superman | Dirección del Proyecto Superman |
-| `index.html` | 188 | descripción de la foto | Coordinación de HUMAN STEM |
-| `index.html` | 192 | descripción de la foto | Coordinación de HUMAN STEM |
-| `index.html` | 196 | descripción de la foto | Coordinación de HUMAN STEM |
-| `index.html` | 202 | estado actual de Programa Miltli | Equipo del Programa Miltli |
-| `index.html` | 203 | fechas de las actividades documentadas de Programa Miltli | Equipo del Programa Miltli |
-| `index.html` | 207 | descripción de la foto | Coordinación de HUMAN STEM |
-| `index.html` | 211 | descripción de la foto | Coordinación de HUMAN STEM |
-| `index.html` | 215 | descripción de la foto | Coordinación de HUMAN STEM |
+| `en/index.html` | 115 | biografía de Jair Álvarez | Jair Álvarez |
+| `en/index.html` | 117 | aprendizaje central compartido por Jair Álvarez | Jair Álvarez |
+| `en/index.html` | 129 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
+| `index.html` | 131 | biografía de Jair Álvarez | Jair Álvarez |
+| `index.html` | 133 | aprendizaje central compartido por Jair Álvarez | Jair Álvarez |
+| `index.html` | 145 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
+| `index.html` | 189 | estado actual de Proyecto Superman | Dirección del Proyecto Superman |
+| `index.html` | 190 | fechas de las actividades documentadas de Proyecto Superman | Dirección del Proyecto Superman |
+| `index.html` | 194 | descripción de la foto | Coordinación de HUMAN STEM |
+| `index.html` | 198 | descripción de la foto | Coordinación de HUMAN STEM |
+| `index.html` | 202 | descripción de la foto | Coordinación de HUMAN STEM |
+| `index.html` | 208 | estado actual de Programa Miltli | Equipo del Programa Miltli |
+| `index.html` | 209 | fechas de las actividades documentadas de Programa Miltli | Equipo del Programa Miltli |
+| `index.html` | 213 | descripción de la foto | Coordinación de HUMAN STEM |
+| `index.html` | 217 | descripción de la foto | Coordinación de HUMAN STEM |
+| `index.html` | 221 | descripción de la foto | Coordinación de HUMAN STEM |
 | `miltli.html` | 107 | descripción del Programa Miltli validada por su equipo | Equipo del Programa Miltli |
 | `miltli.html` | 109 | lugares donde se realiza el Programa Miltli | Equipo del Programa Miltli |
 | `miltli.html` | 111 | fase actual del Programa Miltli | Equipo del Programa Miltli |
