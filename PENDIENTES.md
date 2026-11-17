@@ -21,11 +21,16 @@ Las líneas corresponden a esta rama. Responsables indicados por función; el eq
 | `miltli.html` | 110 | descripción de la foto | Equipo del Programa Miltli |
 | `miltli.html` | 114 | descripción de la foto | Equipo del Programa Miltli |
 | `miltli.html` | 118 | descripción de la foto | Equipo del Programa Miltli |
-| `superman.html` | 376 | estado actual de Proyecto Superman | Dirección del Proyecto Superman |
-| `superman.html` | 377 | fechas de las actividades documentadas de Proyecto Superman | Dirección del Proyecto Superman |
-| `superman.html` | 381 | descripción de la foto | Dirección del Proyecto Superman |
-| `superman.html` | 385 | descripción de la foto | Dirección del Proyecto Superman |
-| `superman.html` | 389 | descripción de la foto | Dirección del Proyecto Superman |
+| `superman.html` | 61 | estándar y evidencia que respalden la aspiración de grado médico del Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 349 | resumen textual verificado de la entrevista de Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 382 | criterios para solicitar una prótesis de Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 384 | pasos y proceso de atención de solicitudes de prótesis | Dirección del Proyecto Superman |
+| `superman.html` | 386 | primer paso de contacto y canal confirmado para solicitudes de prótesis | Dirección del Proyecto Superman |
+| `superman.html` | 392 | estado actual de Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 393 | fechas de las actividades documentadas de Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 397 | descripción de la foto | Dirección del Proyecto Superman |
+| `superman.html` | 401 | descripción de la foto | Dirección del Proyecto Superman |
+| `superman.html` | 405 | descripción de la foto | Dirección del Proyecto Superman |
 
 ## Fotografías
 
