@@ -382,3 +382,10 @@
   html:active-view-transition .mundo__brote,
   html:active-view-transition .camioneta { visibility: hidden; }
 }
+
+/* El contenido editorial debe poder crecer sin quedar recortado. */
+@media screen {
+  .portada { height: auto; }
+  .mundo { height: auto; grid-auto-rows: auto; }
+  .escena { min-height: calc(100svh - var(--alto-cabecera)); }
+}
