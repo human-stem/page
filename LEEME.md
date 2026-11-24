@@ -35,4 +35,5 @@ Edita `PALETA` en `herramientas/generar_escena.py` junto con sus equivalentes en
 - `node herramientas/auditar.js` comprueba las ocho páginas principales con Playwright. Si está disponible, añade axe-core.
 - `node herramientas/pesar.js` mide una primera carga con Chromium y CPU 4×. Su salida distingue los recursos especulativos.
 - `herramientas/generar_mano.py` imprime el SVG articulado del simulador.
+- Las fotos de evidencia viven en `assets/fotos/` (WebP 4:5, compartidas entre la portada y cada proyecto) y los logotipos de los proyectos en `assets/marca/`. El video de Superman se declara con `data-video` en la portada `.video__portada`.
 - Actualiza la fecha del pie en las ocho páginas y `lastmod` en `sitemap.xml` al publicar. Conserva los alias `quienes-somos.html`, `colabora.html` y `uso_responsable_ia.html`.

@@ -201,6 +201,92 @@ a[aria-current] .astro::after { background: #fff1c8; scale: 1.25; }
   line-height: 1.5;
 }
 
+/* Insignia del proyecto: el logotipo sobre un disco claro, como el sticker
+   del stand, con el mismo halo que las estrellas de la constelación. */
+.estrella--primera { display: flow-root; }
+.insignia {
+  float: right;
+  width: clamp(84px, 20vw, 150px);
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0 0 12px clamp(12px, 2vw, 24px);
+  padding: clamp(7px, 1.2vw, 12px);
+  object-fit: contain;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 30%, #fffaf0, #efe4cc);
+  box-shadow:
+    0 0 0 1px rgb(255 231 173 / .6),
+    0 0 0 8px rgb(255 231 173 / .07),
+    0 0 46px rgb(171 219 223 / .24);
+}
+
+/* Video: portada en el lenguaje de la carta (retícula, estrellas y astro
+   dorado). El reproductor de YouTube solo se carga al pulsarla. */
+.video { margin: 18px 0 22px; }
+.video__marco {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--filete);
+  border-radius: var(--radio-panel);
+  background:
+    radial-gradient(ellipse 62% 74% at 50% 46%, rgb(59 118 139 / .34), transparent 72%),
+    linear-gradient(145deg, #101e29, #0c1920 55%, #0d1b26);
+}
+.video__marco--activo { border-color: color-mix(in srgb, var(--cielo) 55%, transparent); background: #000; }
+.video__marco iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video__portada {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: clamp(8px, 2.4vw, 16px);
+  padding: 16px;
+  background: url("assets/escena/estrellas.svg") 0 0 / 540px 390px;
+  color: var(--texto);
+  text-decoration: none;
+}
+.video__portada:visited { color: var(--texto); }
+.video__portada:focus-visible { outline-offset: -5px; border-radius: var(--radio-panel); }
+.video__reticula {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #8bb5bf;
+  stroke-width: .8;
+  opacity: .3;
+  pointer-events: none;
+}
+.video__boton {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(54px, 12vw, 78px);
+  aspect-ratio: 1;
+  border: 1px solid var(--oro);
+  border-radius: 50%;
+  background: rgb(18 36 48 / .9);
+  box-shadow: 0 0 0 7px rgb(255 231 173 / .07), 0 0 26px rgb(245 206 123 / .32);
+  transition: scale .24s, border-color .24s, box-shadow .24s;
+}
+.video__boton svg { width: 42%; height: 42%; fill: var(--oro); translate: 6% 0; }
+.video__texto { position: relative; display: grid; justify-items: center; gap: 4px; text-align: center; }
+.video__texto .rotulo { color: var(--oro); }
+.video__texto strong { font: 400 clamp(1.0625rem, .9rem + .9vw, 1.5rem)/1.2 var(--serif); text-wrap: balance; }
+.video__portada:hover .video__boton,
+.video__portada:focus-visible .video__boton {
+  scale: 1.08;
+  border-color: #fff3ce;
+  box-shadow: 0 0 0 3px rgb(249 224 173 / .28), 0 0 24px rgb(240 211 159 / .56);
+}
+.video figcaption { margin-top: 8px; color: var(--texto-mudo); font: 400 .875rem/1.45 var(--sans); }
+@media (max-width: 380px) {
+  .video__texto .rotulo { display: none; }
+}
+
 /* ---------- 4. Simulador ---------- */
 .simulador {
   border-radius: var(--radio-panel); display: grid; gap: 10px; max-width: 30rem; margin-top: 4px; }
@@ -452,6 +538,9 @@ a[aria-current] .astro::after { background: #fff1c8; scale: 1.25; }
   .facetas details > p { display: block; }
   .descenso { border: 0; background: none; padding: 0; }
   .descenso strong, .descenso .rotulo { color: #000; }
+  .insignia { box-shadow: none; border: 1px solid #000; }
+  .video__marco { display: none; }
+  .video figcaption { color: #000; }
 }
 
 @media screen {

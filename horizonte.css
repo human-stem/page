@@ -324,7 +324,10 @@
   #quienes-somos .parada__entrada, #about-us .parada__entrada { font-size: clamp(1rem, 1.55cqi, 1.1875rem); }
   .identidad { grid-template-columns: 1fr 1fr; gap: 20px; font-size: 1rem; line-height: 1.45; }
   .pareja { grid-template-columns: 1.5fr 1fr; gap: 24px; max-width: 46rem; }
-  .persona details[open] { max-height: 145px; overflow: auto; scrollbar-width: thin; padding: 4px; }
+  /* Con tres perfiles, el segundo ocupa toda su columna y los otros dos
+     se apilan en la primera: la parada no crece en altura. */
+  .pareja > .persona:nth-child(2):nth-last-child(2) { grid-row: span 2; }
+  .persona details[open] { max-height: 172px; overflow: auto; scrollbar-width: thin; padding: 4px; }
 
   .rumbo--en-suelo,
   .rumbo--en-suelo:not(.rumbo--tierra) { left: var(--columna); right: auto; bottom: 16px; }

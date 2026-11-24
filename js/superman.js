@@ -426,3 +426,32 @@
   }
   calma.addEventListener('change', despertar);
 })();
+
+/* 3. Video: la portada se sustituye por el reproductor de YouTube solo al
+   pulsarla, para no cargar código de terceros antes de tiempo. Sin
+   JavaScript, la portada abre el video en YouTube. */
+(function () {
+  'use strict';
+  var portadas = document.querySelectorAll('.video__portada[data-video]');
+  Array.prototype.forEach.call(portadas, function (portada) {
+    portada.setAttribute('role', 'button');
+    portada.addEventListener('click', function (evento) {
+      if (evento.metaKey || evento.ctrlKey || evento.shiftKey || evento.button > 0) return;
+      evento.preventDefault();
+      var marco = portada.parentNode;
+      var reproductor = document.createElement('iframe');
+      reproductor.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(portada.dataset.video) +
+        '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      reproductor.title = portada.dataset.titulo || 'Video en YouTube';
+      reproductor.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      reproductor.allowFullscreen = true;
+      reproductor.referrerPolicy = 'strict-origin-when-cross-origin';
+      marco.replaceChild(reproductor, portada);
+      marco.classList.add('video__marco--activo');
+      reproductor.focus();
+    });
+    portada.addEventListener('keydown', function (evento) {
+      if (evento.key === ' ') { evento.preventDefault(); portada.click(); }
+    });
+  });
+})();

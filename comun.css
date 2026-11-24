@@ -580,10 +580,26 @@ body[data-plano] { isolation: isolate; }
 }
 
 /* Evidencias: mismos componentes en portada y páginas de proyecto. */
-.galeria-evidencia { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+/* Las fotos llegan del celular en vertical: se recortan a 4:5 sin personas. */
+.galeria-evidencia { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 62rem; }
 .galeria-evidencia figure { margin: 0; min-width: 0; }
-.galeria-evidencia img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radio-chico); }
-.galeria-evidencia figcaption { margin-top: 8px; font-size: .875rem; overflow-wrap: anywhere; }
+.galeria-evidencia img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--filete);
+  border-radius: var(--radio-chico);
+  background: color-mix(in srgb, var(--texto) 8%, transparent);
+}
+.galeria-evidencia figcaption { margin-top: 8px; color: var(--texto-suave); font: 400 .875rem/1.45 var(--sans); overflow-wrap: anywhere; }
 .evidencia { margin-block: 24px; }
-.ficha-programa { position: relative; padding: 24px var(--margen); max-width: 80rem; margin-inline: auto; color: var(--texto); background: var(--fondo); }
-@media (max-width: 599px) { .galeria-evidencia { grid-template-columns: 1fr; } }
+.evidencia h2, .evidencia h3 { display: flex; align-items: center; gap: .45em; }
+.evidencia__logo { flex: none; width: auto; height: 1.6em; }
+.evidencia__logo--ovalo { height: 1.75em; }
+.ficha-programa { position: relative; z-index: 2; padding: 24px var(--margen); max-width: 80rem; margin-inline: auto; color: var(--texto); background: var(--fondo); }
+@media (max-width: 599px) {
+  .galeria-evidencia { grid-template-columns: 1fr; gap: 20px; }
+  .galeria-evidencia figure { max-width: 26rem; }
+}

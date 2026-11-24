@@ -55,6 +55,7 @@
     </nav>
 
     <section class="estrella estrella--primera" id="proposito" aria-labelledby="titulo-proposito">
+      <img class="insignia" src="assets/marca/superman-logo.webp" alt="" width="360" height="356">
       <p class="rotulo estrella__marca">Estrella 01 · Propósito</p>
       <h1 id="titulo-proposito">Proyecto Superman</h1>
       <p>Alcanzar el grado médico es una aspiración del proyecto; actualmente no cuenta con un estándar que respalde esa denominación.</p>
@@ -344,6 +345,26 @@
     <section class="estrella" id="entrevista" aria-labelledby="titulo-entrevista">
       <p class="rotulo estrella__marca">Estrella 03 · Entrevista</p>
       <h2 id="titulo-entrevista">¿Por qué Proyecto Superman?</h2>
+      <!-- El reproductor de YouTube se carga solo al pulsar la portada (js/superman.js).
+           Sin JavaScript, la portada es un enlace al video. -->
+      <figure class="video" id="video">
+        <div class="video__marco">
+          <a class="video__portada" href="https://www.youtube.com/watch?v=MIny5_CMPO4" rel="external noopener" data-video="MIny5_CMPO4" data-titulo="Video de Proyecto Superman en YouTube">
+            <svg class="video__reticula" viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+              <ellipse cx="320" cy="180" rx="250" ry="150"/>
+              <ellipse cx="320" cy="180" rx="180" ry="108"/>
+              <ellipse cx="320" cy="180" rx="290" ry="96" transform="rotate(-14 320 180)" stroke-dasharray="3 7"/>
+              <path d="M320 12v336M24 180h592" stroke-dasharray="2 8"/>
+            </svg>
+            <span class="video__boton" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 6.5v11l8.5-5.5Z"/></svg></span>
+            <span class="video__texto">
+              <span class="rotulo">Video · YouTube</span>
+              <strong>Reproducir el video de Proyecto Superman</strong>
+            </span>
+          </a>
+        </div>
+        <figcaption>Al reproducirlo se carga el reproductor de YouTube. <a href="https://youtu.be/MIny5_CMPO4" rel="external noopener">Abrir el video en YouTube</a>.</figcaption>
+      </figure>
       <p><a class="boton" href="https://www.instagram.com/reel/DYN5lJItlNd/" rel="external noopener">Ver la entrevista en Instagram</a></p>
       <h3>Resumen de la entrevista</h3>
       <p>[PENDIENTE: resumen textual verificado de la entrevista de Proyecto Superman]</p>
@@ -393,16 +414,16 @@
       <p><strong>Fechas:</strong> [PENDIENTE: fechas de las actividades documentadas de Proyecto Superman]</p>
       <div class="galeria-evidencia">
         <figure>
-          <img src="assets/fotos/superman-01.svg" alt="" width="1200" height="900" loading="lazy" data-placeholder="true">
-          <figcaption>[PENDIENTE: descripción de la foto]</figcaption>
+          <img src="assets/fotos/superman-01.webp" alt="" width="739" height="924" loading="lazy" decoding="async">
+          <figcaption>Prototipo de la mano impresa en 3D, junto a dos placas de circuito, en el stand de HUMAN STEM durante la 2.ª Feria de la Red de Responsabilidad Social (noviembre de 2026).</figcaption>
         </figure>
         <figure>
-          <img src="assets/fotos/superman-02.svg" alt="" width="1200" height="900" loading="lazy" data-placeholder="true">
-          <figcaption>[PENDIENTE: descripción de la foto]</figcaption>
+          <img src="assets/fotos/superman-02.webp" alt="" width="739" height="924" loading="lazy" decoding="async">
+          <figcaption>Dos prototipos de la mano, uno negro y uno gris, con sus placas de circuito sobre la mesa del stand.</figcaption>
         </figure>
         <figure>
-          <img src="assets/fotos/superman-03.svg" alt="" width="1200" height="900" loading="lazy" data-placeholder="true">
-          <figcaption>[PENDIENTE: descripción de la foto]</figcaption>
+          <img src="assets/fotos/superman-03.webp" alt="" width="591" height="739" loading="lazy" decoding="async">
+          <figcaption>Placas de circuito impreso de la mano, fotografiadas en junio de 2026.</figcaption>
         </figure>
       </div>
     </section>
@@ -435,7 +456,7 @@
         </ul>
       </nav>
     </div>
-    <p>© 2026 HUMAN STEM. Sitio web administrado por: HUMAN STEM. <a href="mailto:human.stem.org@gmail.com">human.stem.org@gmail.com</a>. Última actualización: <time datetime="2026-11-16">16 de noviembre de 2026</time>.</p>
+    <p>© 2026 HUMAN STEM. Sitio web administrado por: HUMAN STEM. <a href="mailto:human.stem.org@gmail.com">human.stem.org@gmail.com</a>. Última actualización: <time datetime="2026-11-24">24 de noviembre de 2026</time>.</p>
     <p>En la creación de este sitio web se utilizaron herramientas generativas (Codex y Claude Code). <a href="uso-responsable-ia.html">Política de uso responsable de IA</a>.</p>
     <p class="pie__feria">Presentado en la Feria de la Red de Responsabilidad Social, <a href="https://www.acatlan.unam.mx/" rel="external noopener">FES Acatlán</a>, <a href="https://www.unam.mx/" rel="external noopener">UNAM</a>.</p>
   </footer>

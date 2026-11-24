@@ -1,5 +1,19 @@
 # HUMAN STEM · Cambios para la feria
 
+## 24 de noviembre de 2026 · Fotos, logotipos, video y perfil de Miltli
+
+| Archivo | Cambio |
+|---|---|
+| `assets/fotos/*.webp` | Seis fotos de evidencia (tres de Superman, tres de Miltli) en lugar de los SVG de reserva. Recorte 4:5 desde el original y ninguna foto con personas. |
+| `assets/marca/` | Logotipo de Proyecto Superman y el isotipo de Miltli, este último sin el fondo negro del original. |
+| `superman.html`, `superman.css`, `js/superman.js` | Insignia del proyecto junto al título, en un disco claro como el sticker del stand. El video de YouTube, en la sección Entrevista, usa una portada propia con la retícula y el astro de la constelación. El reproductor (youtube-nocookie.com) solo se carga al pulsarla. Sin JavaScript, la portada enlaza a YouTube. |
+| `miltli.html`, `miltli.css` | El isotipo aparece bajo la línea del suelo en la portada y en la firma final. Tarjeta del perfil de Areli Barajas Sánchez. La ficha queda por encima del suelo ilustrado (antes lo tapaba) y deja libre el control de profundidad en móvil. El enlace «Conoce el programa y su equipo» ahora es legible sobre la tierra. |
+| `index.html`, `en/index.html`, `horizonte.css` | Galerías con fotos y logotipos en los títulos. Tercer perfil en Equipo: el de Jair ocupa su columna y Areli se coloca bajo Iñaki. |
+| `comun.css` | La galería pasa a 4:5, con borde y leyenda en sans. |
+| `mapa-del-sitio.html`, `creditos.html`, `PENDIENTES.md`, `sitemap.xml` y los pies de página | Búsqueda, créditos de fotos, logotipos y video, pendientes actualizados y fecha 2026-11-24. |
+
+Verificación: `node herramientas/auditar.js` con axe-core revisó las 8 páginas sin problemas (consola, recursos, desborde de 320 a 1440 px, encabezados, enlaces y WCAG 2.2 AA). En la carga inicial de `superman.html` no hay solicitudes a otros orígenes.
+
 10 de noviembre de 2026 · Base del 9 de noviembre · P1–P9
 
 ## Cambié

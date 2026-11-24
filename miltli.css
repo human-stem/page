@@ -1107,7 +1107,7 @@ body.below-ground .exploration-tools { opacity: 1; visibility: visible; }
   letter-spacing: .3px;
 }
 .miltli-signature { gap: 6px; text-align: left; }
-.miltli-signature>svg { width: 35px; height: 35px; }
+.miltli-signature>img { width: auto; height: 50px; filter: drop-shadow(0 3px 6px rgb(20 14 8 / .35)); }
 .miltli-signature>span { font: italic 34px/1 var(--title-font); letter-spacing: -.5px; }
 .miltli-signature small {
   font: normal 12px var(--body-font);
@@ -1323,7 +1323,7 @@ body.below-ground .exploration-tools { opacity: 1; visibility: visible; }
     max-width: 33px;
     padding-left: 6px;
   }
-  .miltli-signature>svg { width: 28px; height: 28px; }
+  .miltli-signature>img { height: 42px; }
   .miltli-signature>span { font-size: 29px; }
   .miltli-signature small { font-size: 12px; letter-spacing: .8px; }
   .partner-signatures>i { font-size: 15px; }
@@ -1471,6 +1471,19 @@ body.below-ground .exploration-tools { opacity: 1; visibility: visible; }
   line-height: 1.55;
   margin: 0 0 20px;
 }
+/* El isotipo de Miltli brota justo bajo la línea del suelo. */
+.hero-logo {
+  display: block;
+  width: auto;
+  height: clamp(52px, 8svh, 84px);
+  margin: 0 auto clamp(8px, 1.4svh, 14px);
+  filter: drop-shadow(0 6px 12px rgb(30 20 12 / .4));
+}
+/* Con el isotipo, el respiro bajo el suelo se reduce para que el botón
+   principal siga dentro de la primera pantalla. */
+.hero-copy:has(> .hero-logo) { padding-top: calc(var(--linea-local) + clamp(18px, 4svh, 40px)); }
+.hero-copy a:not(.button) { color: #fff7e8; }
+.hero-copy a:not(.button):visited { color: #f0dcf7; }
 .hero-copy .button svg { transform: none; }
 .hero-copy .button:hover svg { transform: translateY(3px); }
 
@@ -1635,4 +1648,57 @@ html:not(.js-enabled) .process-step { cursor: auto; }
 @media screen {
   .content-layer { content-visibility: auto; contain-intrinsic-block-size: auto 880px; }
   .journey-end { content-visibility: auto; contain-intrinsic-block-size: auto 620px; }
+}
+
+/* Perfil del equipo: tarjeta sobre el fondo claro de la ficha. El monograma
+   sustituye a la fotografía; los tonos vienen del isotipo de Miltli. */
+.ficha-programa h3 { margin: 22px 0 6px; }
+.perfil {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 18px;
+  max-width: 44rem;
+  margin: 10px 0 18px;
+  padding: 18px 20px 20px;
+  border: 1px solid var(--filete);
+  border-radius: var(--radio-panel);
+  background: linear-gradient(160deg, #f6f9f1, #e5eedc);
+}
+.perfil__monograma {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  aspect-ratio: 4 / 5;
+  border: 3px solid #66cbff;
+  border-radius: 50%;
+  background: #fff;
+  color: #1f5f86;
+  font: 400 1.375rem/1 var(--serif);
+  letter-spacing: .02em;
+}
+.perfil__texto > * { margin: 0; }
+.perfil__cargo { font: 400 .75rem/1.4 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--acento-horizonte); }
+.perfil__nombre { margin: 2px 0 8px; font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem); letter-spacing: -.02em; }
+.perfil__texto > p:not(.perfil__cargo) { color: var(--texto-suave); line-height: 1.55; }
+.perfil__temas { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; padding: 0; list-style: none; }
+.perfil__temas li {
+  padding: 4px 11px;
+  border: 1px solid color-mix(in srgb, var(--acento-horizonte) 35%, transparent);
+  border-radius: var(--radio-control);
+  background: rgb(255 255 255 / .55);
+  color: var(--tinta);
+  font: 400 .8125rem/1.3 var(--sans);
+}
+/* En móvil, la ficha deja libre la franja del control de profundidad,
+   igual que las capas de la guía. */
+@media (max-width: 760px) {
+  .miltli .ficha-programa { padding-inline: 16px 78px; }
+}
+@media (max-width: 480px) {
+  .perfil { grid-template-columns: minmax(0, 1fr); padding: 16px; }
+  .perfil__monograma { width: 52px; }
+}
+@media print {
+  .hero-logo { filter: none; }
+  .perfil { border-color: #000; background: none; }
 }

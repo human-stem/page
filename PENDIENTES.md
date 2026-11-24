@@ -6,51 +6,50 @@ Las líneas corresponden a esta rama. Responsables indicados por función; el eq
 |---|---:|---|---|
 | `en/index.html` | 115 | biografía de Jair Álvarez | Jair Álvarez |
 | `en/index.html` | 117 | aprendizaje central compartido por Jair Álvarez | Jair Álvarez |
-| `en/index.html` | 129 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
+| `en/index.html` | 138 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
 | `index.html` | 131 | biografía de Jair Álvarez | Jair Álvarez |
 | `index.html` | 133 | aprendizaje central compartido por Jair Álvarez | Jair Álvarez |
-| `index.html` | 145 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
-| `index.html` | 189 | estado actual de Proyecto Superman | Dirección del Proyecto Superman |
-| `index.html` | 190 | fechas de las actividades documentadas de Proyecto Superman | Dirección del Proyecto Superman |
-| `index.html` | 194 | descripción de la foto | Coordinación de HUMAN STEM |
-| `index.html` | 198 | descripción de la foto | Coordinación de HUMAN STEM |
-| `index.html` | 202 | descripción de la foto | Coordinación de HUMAN STEM |
-| `index.html` | 208 | estado actual de Programa Miltli | Equipo del Programa Miltli |
-| `index.html` | 209 | fechas de las actividades documentadas de Programa Miltli | Equipo del Programa Miltli |
-| `index.html` | 213 | descripción de la foto | Coordinación de HUMAN STEM |
-| `index.html` | 217 | descripción de la foto | Coordinación de HUMAN STEM |
-| `index.html` | 221 | descripción de la foto | Coordinación de HUMAN STEM |
-| `miltli.html` | 107 | descripción del Programa Miltli validada por su equipo | Equipo del Programa Miltli |
-| `miltli.html` | 109 | lugares donde se realiza el Programa Miltli | Equipo del Programa Miltli |
-| `miltli.html` | 111 | fase actual del Programa Miltli | Equipo del Programa Miltli |
-| `miltli.html` | 113 | actividades y compromiso de participación en el Programa Miltli | Equipo del Programa Miltli |
-| `miltli.html` | 115 | significado y origen verificados del nombre Miltli | Equipo del Programa Miltli |
-| `miltli.html` | 117 | nombres, roles y biografías del equipo del Programa Miltli | Equipo del Programa Miltli |
-| `miltli.html` | 123 | estado actual de Programa Miltli | Equipo del Programa Miltli |
-| `miltli.html` | 124 | fechas de las actividades documentadas de Programa Miltli | Equipo del Programa Miltli |
-| `miltli.html` | 128 | descripción de la foto | Equipo del Programa Miltli |
-| `miltli.html` | 132 | descripción de la foto | Equipo del Programa Miltli |
-| `miltli.html` | 136 | descripción de la foto | Equipo del Programa Miltli |
-| `superman.html` | 61 | estándar y evidencia que respalden la aspiración de grado médico del Proyecto Superman | Dirección del Proyecto Superman |
-| `superman.html` | 349 | resumen textual verificado de la entrevista de Proyecto Superman | Dirección del Proyecto Superman |
-| `superman.html` | 382 | criterios para solicitar una prótesis de Proyecto Superman | Dirección del Proyecto Superman |
-| `superman.html` | 384 | pasos y proceso de atención de solicitudes de prótesis | Dirección del Proyecto Superman |
-| `superman.html` | 386 | primer paso de contacto y canal confirmado para solicitudes de prótesis | Dirección del Proyecto Superman |
-| `superman.html` | 392 | estado actual de Proyecto Superman | Dirección del Proyecto Superman |
-| `superman.html` | 393 | fechas de las actividades documentadas de Proyecto Superman | Dirección del Proyecto Superman |
-| `superman.html` | 397 | descripción de la foto | Dirección del Proyecto Superman |
-| `superman.html` | 401 | descripción de la foto | Dirección del Proyecto Superman |
-| `superman.html` | 405 | descripción de la foto | Dirección del Proyecto Superman |
+| `index.html` | 154 | roles de voluntariado para futuras convocatorias | Coordinación de HUMAN STEM |
+| `index.html` | 198 | estado actual de Proyecto Superman | Dirección del Proyecto Superman |
+| `index.html` | 199 | fechas de las actividades documentadas de Proyecto Superman | Dirección del Proyecto Superman |
+| `index.html` | 217 | estado actual de Programa Miltli | Equipo del Programa Miltli |
+| `index.html` | 218 | fechas de las actividades documentadas de Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 108 | descripción del Programa Miltli validada por su equipo | Equipo del Programa Miltli |
+| `miltli.html` | 110 | lugares donde se realiza el Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 112 | fase actual del Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 114 | actividades y compromiso de participación en el Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 116 | significado y origen verificados del nombre Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 136 | estado actual de Programa Miltli | Equipo del Programa Miltli |
+| `miltli.html` | 137 | fechas de las actividades documentadas de Programa Miltli | Equipo del Programa Miltli |
+| `superman.html` | 62 | estándar y evidencia que respalden la aspiración de grado médico del Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 370 | resumen textual verificado de la entrevista de Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 403 | criterios para solicitar una prótesis de Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 405 | pasos y proceso de atención de solicitudes de prótesis | Dirección del Proyecto Superman |
+| `superman.html` | 407 | primer paso de contacto y canal confirmado para solicitudes de prótesis | Dirección del Proyecto Superman |
+| `superman.html` | 413 | estado actual de Proyecto Superman | Dirección del Proyecto Superman |
+| `superman.html` | 414 | fechas de las actividades documentadas de Proyecto Superman | Dirección del Proyecto Superman |
 
 ## Fotografías
 
-Un único diseño neutral: `assets/placeholder-foto.svg` (1200 × 900, relación 4:3). Los seis archivos de `assets/fotos/` son copias de reserva del mismo diseño, con rutas estables compartidas entre inicio y detalle de proyecto.
+Las seis fotografías de evidencia ya están en `assets/fotos/` (WebP, recortadas a 4:5 y sin personas). Salen de la carpeta de Drive «Imagen» de HUMAN STEM; sus leyendas están en el HTML.
 
-| Archivos de destino | Entrega esperada | Responsable |
+| Archivo | Original | Contenido |
 |---|---|---|
-| `assets/fotos/superman-01.svg`, `superman-02.svg`, `superman-03.svg` | Tres fotos de 1200 × 900 px, con descripción, fecha y autorización de uso | Dirección del Proyecto Superman |
-| `assets/fotos/miltli-01.svg`, `miltli-02.svg`, `miltli-03.svg` | Tres fotos de 1200 × 900 px, con descripción, fecha y autorización de uso | Equipo del Programa Miltli |
+| `superman-01.webp` | `proyecto-superman/feria_113544` | Mano gris impresa en 3D junto a dos placas de circuito (feria, noviembre de 2026) |
+| `superman-02.webp` | `proyecto-superman/feria_123221` | Dos prototipos de mano y sus placas de circuito (feria) |
+| `superman-03.webp` | `proyecto-superman/junio_140735` | Placas de circuito impreso, foto de producto (junio de 2026) |
+| `miltli-01.webp` | `miltli/feria_113805` | Póster «Programa Miltli – fase piloto» (feria) |
+| `miltli-02.webp` | `miltli/feria_113509` | Stickers de plantas y de los isotipos de Miltli y Superman (feria) |
+| `miltli-03.webp` | `miltli/feria_113831` | Stickers de Superman y Miltli juntos (feria) |
 
-Para sustituir la imagen sin cambiar las rutas ni la estructura HTML, reemplazar cada archivo SVG de reserva por un SVG con la fotografía incrustada como `<image href="data:image/jpeg;base64,…" width="1200" height="900"/>`, conservando su viewBox. No basta con renombrar un JPEG a .svg. Las fotografías fuente pueden entregarse como superman-01.jpg a superman-03.jpg y miltli-01.jpg a miltli-03.jpg.
+Se descartaron las fotos donde aparecen personas, incluida `proyecto-superman/feria_115852` (la prótesis en manos de un visitante). Para cambiar una foto, sustituye el archivo con un recorte 4:5 y actualiza `width`, `height` y la leyenda en `index.html` y en la página del proyecto.
 
-Al incorporar las fotos, actualizar las leyendas pendientes y retirar `data-placeholder="true"`; conservar alt="" si la leyenda describe completamente la imagen. Este ajuste editorial de accesibilidad es necesario, aunque la sustitución gráfica no requiera cambiar el marcado. No se han añadido estadísticas, fechas de proyecto ni criterios no confirmados.
+## Logotipos y video
+
+- `assets/marca/superman-logo.webp` (logotipo a color) y `assets/marca/miltli-logo.webp` (isotipo del agave, sin el fondo negro del original).
+- El video de Proyecto Superman (`https://youtu.be/MIny5_CMPO4`) está en la sección Entrevista. Falta confirmar su título exacto para la leyenda y el atributo `data-titulo` de la portada en `superman.html`.
+
+## Perfiles
+
+- Programa Miltli: perfil de Areli Barajas Sánchez, líder del programa, en `miltli.html` y en la parada Equipo de ambas portadas. Si el programa tiene más integrantes, añadir sus perfiles en la misma tarjeta `.perfil`.
+- Proyecto Superman: falta la biografía de Jair Álvarez (ver tabla).
